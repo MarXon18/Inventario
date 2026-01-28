@@ -15,7 +15,7 @@ HEADERS = {
 }
 
 def main(page: ft.Page):
-    page.title = "Control de Stock SysAcad"
+    page.title = "Control de Stock"
     page.theme_mode = ft.ThemeMode.LIGHT
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.scroll = "adaptive"
@@ -82,7 +82,7 @@ def main(page: ft.Page):
                 content=ft.Column([
                     ft.Row([nombre_in, variedad_in]),
                     ft.Row([cantidad_in, ft.ElevatedButton("Añadir al Stock", 
-                           icon=ft.icons.SAVE, on_click=agregar_click, expand=True)]),
+                           icon=ft.icons.ADD, on_click=agregar_click, expand=True)]),
                 ]), padding=20
             )
         ),
@@ -93,3 +93,6 @@ def main(page: ft.Page):
     cargar_datos()
 
 ft.app(target=main)
+# Al final del archivo
+if __name__ == "__main__":
+    ft.app(target=main)
